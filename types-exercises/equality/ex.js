@@ -1,9 +1,9 @@
 // TODO: write `findAll(..)`
 function findAll(value, arr) {
 	const isEmptyOrWhiteSpace = (val) => (typeof val == 'string' && val.trim() == '');
-	const isNullOrUndefined = (val) => (val === null || val === undefined);
+	const isNullOrUndefined = (val) => val == null;
 	const isNumberOrString = (val) => (typeof val == 'number' || typeof val == 'string');
-	const isNegativeZero = (val) => (val === 0 && (1 / val) === -Infinity);
+	const isNegativeZero = (val) => Object.is(val, -0);
 
 	return arr.filter(item => {
 		if (isNullOrUndefined(value) && isNullOrUndefined(item)) return true;
