@@ -14,7 +14,7 @@ function isValidName(name) {
   
     const attendedNumber = Number(attended);
     const lengthNumber = Number(length);
-    const valid = (num) =>  !Number.isNaN(num) && num >= 0 && Number.isInteger(num);
+    const valid = (num) => Number.isInteger(num) && num >= 0;
     if (!valid(attendedNumber) || !valid(lengthNumber)) return false;
   
     return attendedNumber <= lengthNumber;
